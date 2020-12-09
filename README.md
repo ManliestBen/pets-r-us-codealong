@@ -6,7 +6,6 @@ git reset --hard origin/main
 
 # MEN Stack with OAuth Template
 
-1. Delete functionality
 2. Show View
 3. Update functionality
 4. Add comment UI

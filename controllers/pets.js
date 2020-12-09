@@ -5,7 +5,9 @@ module.exports = {
   new: newPet,
   create,
   index,
-  delete: deletePet
+  delete: deletePet,
+  show,
+  edit
 }
 
 function newPet(req, res) {
@@ -32,5 +34,20 @@ function deletePet(req, res) {
   Pet.findByIdAndDelete(req.params.id)
   .then(() => {
     res.redirect('/pets')
+  })
+}
+
+function show(req, res) {
+  Pet.findById(req.params.id)
+  .populate('owner')
+  .then((pet) => {
+    res.render('pets/show', {pet, user: req.user})
+  })
+}
+
+function edit(req, res) {
+  Pet.findById(req.params.id)
+  .then((pet) => {
+    res.render('pets/edit', {pet, user: req.user})
   })
 }
