@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title><%= title %></title>
+    <title>Pet Collector</title>
   </head>
   <body>
     <nav>
@@ -12,6 +12,9 @@
         <% if (user) { %>
         <li>
           <a href="/auth/logout">Log Out</a>
+        </li>
+        <li>
+          <a href="/pets/new">Add Pet</a>
         </li>
         <% } else { %>
         <li>

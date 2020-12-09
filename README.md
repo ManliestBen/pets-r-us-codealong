@@ -6,8 +6,6 @@ git reset --hard origin/main
 
 # MEN Stack with OAuth Template
 
-
-2.  Add models / controllers / routers
 3.  Create new pet
     1.  Render new view
     2.  Handle POST request
