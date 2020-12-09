@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const petsCtrl = require('../controllers/pets')
+const usersCtrl = require('../controllers/users')
 
 
 
