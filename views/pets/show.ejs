@@ -15,5 +15,7 @@
   <button type="submit">Add Comment 🦘</button>
 </form>
 <!-- A forEach loop to display each comment and the user that posted it -->
-
+<% pet.comments.forEach((c) => { %>
+<h4><%= c.comment %> - <%= c.postedBy %></h4>
+<% }) %> 
 <%- include('../partials/footer') %>
