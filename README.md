@@ -6,8 +6,6 @@ git reset --hard origin/main
 
 # MEN Stack with OAuth Template
 
-2. Show View
-3. Update functionality
 4. Add comment UI
 5. Add comment POST route/controller
 6.  User index view
