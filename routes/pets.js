@@ -7,6 +7,7 @@ router.get('/', isLoggedIn, petsCtrl.index)
 router.delete('/:id', isLoggedIn, petsCtrl.delete)
 router.get('/:id', isLoggedIn, petsCtrl.show)
 router.get('/:id/edit', isLoggedIn, petsCtrl.edit)
+router.put('/:id', isLoggedIn, petsCtrl.update)
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next()

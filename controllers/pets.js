@@ -7,7 +7,8 @@ module.exports = {
   index,
   delete: deletePet,
   show,
-  edit
+  edit,
+  update
 }
 
 function newPet(req, res) {
@@ -49,5 +50,12 @@ function edit(req, res) {
   Pet.findById(req.params.id)
   .then((pet) => {
     res.render('pets/edit', {pet, user: req.user})
+  })
+}
+
+function update(req, res) {
+  Pet.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then((pet) => {
+    res.redirect(`/pets/${pet._id}`)
   })
 }
