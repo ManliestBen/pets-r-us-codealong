@@ -4,7 +4,8 @@ const User = require('../models/user')
 module.exports = {
   new: newPet,
   create,
-  index
+  index,
+  delete: deletePet
 }
 
 function newPet(req, res) {
@@ -24,5 +25,12 @@ function index(req, res) {
   .populate('owner')
   .then((pets) => {
     res.render('pets/index', {pets, user: req.user})
+  })
+}
+
+function deletePet(req, res) {
+  Pet.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect('/pets')
   })
 }

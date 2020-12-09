@@ -4,6 +4,7 @@ const petsCtrl = require('../controllers/pets')
 router.get('/new', isLoggedIn, petsCtrl.new)
 router.post('/', isLoggedIn, petsCtrl.create)
 router.get('/', isLoggedIn, petsCtrl.index)
+router.delete('/:id', isLoggedIn, petsCtrl.delete)
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next()
