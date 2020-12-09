@@ -8,7 +8,8 @@ module.exports = {
   delete: deletePet,
   show,
   edit,
-  update
+  update,
+  indexMine
 }
 
 function newPet(req, res) {
@@ -57,5 +58,12 @@ function update(req, res) {
   Pet.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then((pet) => {
     res.redirect(`/pets/${pet._id}`)
+  })
+}
+
+function indexMine(req, res) {
+  Pet.find({ owner: req.user._id })
+  .then((pets) => {
+    res.render('pets/index', {pets, user: req.user})
   })
 }
